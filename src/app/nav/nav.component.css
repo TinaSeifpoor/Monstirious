@@ -1,0 +1,21 @@
+.hpClass {
+    flex-grow: 2;
+}
+
+.ab1Class {
+    flex-grow: 1;
+}
+
+.ab2Class {
+    flex-grow: 1;
+}
+
+.mnClass {
+    flex-grow: 2;
+}
+
+.navClass{
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+}
