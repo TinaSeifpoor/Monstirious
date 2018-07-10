@@ -6,8 +6,10 @@ import { ScreenComponent } from './screen/screen.component';
 import { NavComponent } from './nav/nav.component';
 import { HPComponent } from './hp/hp.component';
 import { MNComponent } from './mn/mn.component';
-import { AB1Component } from './ab1/ab1.component';
 import { AB2Component } from './ab2/ab2.component';
+import { RestoreHealthComponent } from './Cards/RestoreHealth/restorehealth.component';
+import { PlayerComponent } from './player/player.component';
+import { MonsterComponent } from './monster/monster.component';
 
 @NgModule({
   declarations: [
@@ -16,8 +18,10 @@ import { AB2Component } from './ab2/ab2.component';
     NavComponent,
     HPComponent,
     MNComponent,
-    AB1Component,
-    AB2Component
+    RestoreHealthComponent,
+    AB2Component,
+    PlayerComponent,
+    MonsterComponent
   ],
   imports: [
     BrowserModule

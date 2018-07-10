@@ -17,11 +17,11 @@ export class MNComponent implements OnInit {
 
     this.healthPointService.mana$.subscribe(myFunctionOnCallback);
 
-    setInterval(() => {
+    // setInterval(() => {
 
-    if (this.mn<100){
-      this.healthPointService.changeMana(+1);}
+    // if (this.mn<100){
+    //   this.healthPointService.changeMana(+1);}
 
-    }, 300);
+    // }, 300);
   }
 }
