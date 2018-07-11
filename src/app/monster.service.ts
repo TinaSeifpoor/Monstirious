@@ -4,13 +4,13 @@ import { BehaviorSubject, Observable, ReplaySubject } from "rxjs";
 @Injectable({
   providedIn: "root"
 })
-export class HistoryService {
+export class MonsterService {
   constructor() {
     setInterval(() => {
       if (this.monstermanaSource.getValue() < 100) {
-        this.changeMonsterMana(+1);
+        this.changeMonsterMana(+5);
       }
-    }, 1000);
+    }, 500);
   }
 
   private monsterhealthSource: BehaviorSubject<number> = new BehaviorSubject<

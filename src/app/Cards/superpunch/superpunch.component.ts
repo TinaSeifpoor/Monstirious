@@ -1,15 +1,17 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 
 import { map } from "rxjs/operators";
 import { PlayerService } from "../../player.service";
+
 @Component({
-  selector: "card-restorehealth",
-  templateUrl: "./restorehealth.component.html",
-  styleUrls: ["./restorehealth.component.css"]
+  selector: 'card-superpunch',
+  templateUrl: './superpunch.component.html',
+  styleUrls: ['./superpunch.component.css']
 })
-export class RestoreHealthComponent implements OnInit {
+export class SuperpunchComponent implements OnInit {
+
   public haveEnoughMana = false;
-  public manaCost = 10;
+  public manaCost = 20;
   constructor(private PlayerService: PlayerService) {}
 
   ngOnInit() {
@@ -27,9 +29,8 @@ export class RestoreHealthComponent implements OnInit {
   }
 
   public onClick(): void {
-    console.log("Restore button clicked");
-    this.PlayerService.addPlayerHistory('HealthRestore');
-    this.PlayerService.changeHealth(+10);
+    console.log("Punch button clicked");
+    this.PlayerService.addPlayerHistory('punch');
     this.PlayerService.changeMana(-this.manaCost);
   }
 }

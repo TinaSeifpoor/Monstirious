@@ -1,0 +1,12 @@
+.pClass {
+  flex-grow: 1;
+}
+
+.mClass {
+  flex-grow: 1;
+}
+
+.sClass {
+  display: flex;
+  flex-direction: row;
+}

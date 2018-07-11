@@ -4,7 +4,7 @@ import { BehaviorSubject, Observable, ReplaySubject } from "rxjs";
 @Injectable({
   providedIn: "root"
 })
-export class HealthPointService {
+export class PlayerService {
   private healthSource: BehaviorSubject<number> = new BehaviorSubject<number>(
     100
   );
@@ -39,8 +39,8 @@ export class HealthPointService {
   constructor() {
     setInterval(() => {
       if (this.manaSource.getValue() < 100) {
-        this.changeMana(+1);
+        this.changeMana(+5);
       }
-    }, 1000);
+    }, 500);
   }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { HealthPointService } from "../healthpoint.service";
+import { PlayerService } from "../player.service";
 
 @Component({
   selector: "app-hp",
@@ -8,17 +8,17 @@ import { HealthPointService } from "../healthpoint.service";
 })
 export class HPComponent implements OnInit {
   public hp: number; // Sets the number on the component
-  constructor(private healthPointService: HealthPointService) {}
+  constructor(private PlayerService: PlayerService) {}
 
   public ngOnInit(): void {
     const myFunctionOnCallback = (currentHealthValue: number) => {
       this.hp = currentHealthValue;
     };
 
-    this.healthPointService.health$.subscribe(myFunctionOnCallback);
+    this.PlayerService.health$.subscribe(myFunctionOnCallback);
 
     // setInterval(() => {
-    //   this.healthPointService.changeHealth(-5);
+    //   this.PlayerService.changeHealth(-5);
     // }, 300);
   }
 }

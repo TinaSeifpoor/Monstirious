@@ -6,10 +6,14 @@ import { ScreenComponent } from './screen/screen.component';
 import { NavComponent } from './nav/nav.component';
 import { HPComponent } from './hp/hp.component';
 import { MNComponent } from './mn/mn.component';
-import { AB2Component } from './ab2/ab2.component';
 import { RestoreHealthComponent } from './Cards/RestoreHealth/restorehealth.component';
 import { PlayerComponent } from './player/player.component';
 import { MonsterComponent } from './monster/monster.component';
+import { KickComponent } from './Cards/kick/kick.component';
+import { SuperpunchComponent } from './Cards/superpunch/superpunch.component';
+import { DikshuaComponent } from './Cards/dikshua/dikshua.component';
+
+
 
 @NgModule({
   declarations: [
@@ -19,9 +23,11 @@ import { MonsterComponent } from './monster/monster.component';
     HPComponent,
     MNComponent,
     RestoreHealthComponent,
-    AB2Component,
     PlayerComponent,
-    MonsterComponent
+    MonsterComponent,
+    KickComponent,
+    SuperpunchComponent,
+    DikshuaComponent
   ],
   imports: [
     BrowserModule

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AB2Component } from './ab2.component';
+import { SuperpunchComponent } from './superpunch.component';
 
-describe('AB2Component', () => {
-  let component: AB2Component;
-  let fixture: ComponentFixture<AB2Component>;
+describe('SuperpunchComponent', () => {
+  let component: SuperpunchComponent;
+  let fixture: ComponentFixture<SuperpunchComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AB2Component ]
+      declarations: [ SuperpunchComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AB2Component);
+    fixture = TestBed.createComponent(SuperpunchComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

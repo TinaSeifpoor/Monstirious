@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HealthPointService } from '../healthpoint.service';
+import { PlayerService } from '../player.service';
 
 @Component({
   selector: 'app-player',
@@ -8,17 +8,18 @@ import { HealthPointService } from '../healthpoint.service';
 })
 export class PlayerComponent implements OnInit {
   public playerhistory: string[] = []; // Sets the number on the component
-  constructor(private healthPointService: HealthPointService) {}
+  constructor(private PlayerService: PlayerService) {}
 
   public ngOnInit(): void {
     const myFunctionOnCallback = (currentPlayedCard: string) => {
       this.playerhistory.push(currentPlayedCard);
+      console.log(this.playerhistory);
     };
 
-    this.healthPointService.playerhistory$.subscribe(myFunctionOnCallback);
+    this.PlayerService.playerhistory$.subscribe(myFunctionOnCallback);
 
     // setInterval(() => {
-    //   this.healthPointService.changeHealth(-5);
+    //   this.PlayerService.changeHealth(-5);
     // }, 300);
   }
 }
