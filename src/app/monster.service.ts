@@ -45,7 +45,6 @@ export class MonsterService {
   public changeMonsterMana(changeAmount: number): number {
     const nextMonsterManaAmount =
       this.monstermanaSource.getValue() + changeAmount;
-
     this.monstermanaSource.next(nextMonsterManaAmount);
     return nextMonsterManaAmount;
   }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { map } from "rxjs/operators";
 import { PlayerService } from "../../player.service";
+import { MonsterService } from '../../monster.service';
 
 @Component({
   selector: 'card-kick',
@@ -12,7 +13,9 @@ export class KickComponent implements OnInit {
 
   public haveEnoughMana = false;
   public manaCost = 30;
-  constructor(private PlayerService: PlayerService) {}
+  public damage = 30;
+  constructor(private PlayerService: PlayerService,
+    private MonsterService: MonsterService) {}
 
   ngOnInit() {
     const myFunctionOnCallback = (currentlyHaveEnoughMana: boolean) => {
@@ -32,5 +35,6 @@ export class KickComponent implements OnInit {
     console.log("Kick button clicked");
     this.PlayerService.addPlayerHistory('Kick');
     this.PlayerService.changeMana(-this.manaCost);
+    this.MonsterService.changeMonsterHealth(-this.damage)
   }
 }
