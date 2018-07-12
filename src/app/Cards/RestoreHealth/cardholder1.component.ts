@@ -1,20 +1,19 @@
 import { Component, OnInit } from "@angular/core";
 
 import { map } from "rxjs/operators";
-import { PlayerService } from "../../player.service";
+import { PlayerService, Card, CardType } from "../../player.service";
 import { MonsterService } from "../../monster.service";
-import { Card, CardType } from "../../player.service";
-import { Dikshua } from "../Interfaces";
+import { RestoreHealth } from "../Interfaces";
 
 @Component({
-  selector: "card-dikshua",
-  templateUrl: "./dikshua.component.html",
-  styleUrls: ["./dikshua.component.css"]
+  selector: "card-1",
+  templateUrl: "./cardholder1.component.html",
+  styleUrls: ["./cardholder1.component.css"]
 })
-export class DikshuaComponent implements OnInit {
+export class RestoreHealthComponent implements OnInit {
   public haveEnoughMana = false;
-  public myCard: Card = Dikshua;
-  
+  public myCard : Card = RestoreHealth;
+
   constructor(
     private PlayerService: PlayerService,
     private MonsterService: MonsterService

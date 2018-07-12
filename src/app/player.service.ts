@@ -1,6 +1,25 @@
 import { Injectable } from "@angular/core";
 import { BehaviorSubject, Observable, ReplaySubject } from "rxjs";
 
+export enum CardType {
+  SingleTargetDamage,
+  AreaDamage,
+  SelfHealing
+}
+
+export interface Card {
+  name: string;
+  manaCost: number;
+  damage: number;
+  type: CardType;
+  playCard(
+    changePlayerManaFunction: (changeManaAmount: number) => number,
+    changePlayerHealthFunction: (changeHealthAmount: number) => number,
+    changeMonsterManaFunction: (changeManaAmount: number) => number,
+    changeMonsterHealthFunction: (changeHealthAmount: number) => number
+  );
+}
+
 @Injectable({
   providedIn: "root"
 })
@@ -10,10 +29,10 @@ export class PlayerService {
   );
   public health$: Observable<number> = this.healthSource.asObservable();
 
-  private playercardSource: ReplaySubject<string> = new ReplaySubject<string>();
+  private playercardSource: ReplaySubject<Card> = new ReplaySubject<Card>();
 
   public playerhistory$: Observable<
-    string
+    Card
   > = this.playercardSource.asObservable();
 
   public changeHealth(changeAmount: number): number {
@@ -31,7 +50,7 @@ export class PlayerService {
     return nextManaAmount;
   }
 
-  public addPlayerHistory(newCard: string): string {
+  public addPlayerHistory(newCard: Card): Card {
     this.playercardSource.next(newCard);
     return newCard;
   }

@@ -6,12 +6,13 @@ import { ScreenComponent } from './screen/screen.component';
 import { NavComponent } from './nav/nav.component';
 import { HPComponent } from './hp/hp.component';
 import { MNComponent } from './mn/mn.component';
-import { RestoreHealthComponent } from './Cards/RestoreHealth/restorehealth.component';
+
 import { PlayerComponent } from './player/player.component';
 import { MonsterComponent } from './monster/monster.component';
 import { KickComponent } from './Cards/kick/kick.component';
 import { SuperpunchComponent } from './Cards/superpunch/superpunch.component';
 import { DikshuaComponent } from './Cards/dikshua/dikshua.component';
+import { RestoreHealthComponent } from './Cards/RestoreHealth/cardholder1.component';
 
 
 

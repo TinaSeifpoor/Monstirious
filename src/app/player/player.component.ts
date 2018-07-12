@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PlayerService } from '../player.service';
+import { PlayerService, Card } from '../player.service';
 
 @Component({
   selector: 'app-player',
@@ -11,8 +11,8 @@ export class PlayerComponent implements OnInit {
   constructor(private PlayerService: PlayerService) {}
 
   public ngOnInit(): void {
-    const myFunctionOnCallback = (currentPlayedCard: string) => {
-      this.playerhistory.push(currentPlayedCard);
+    const myFunctionOnCallback = (currentPlayedCard: Card) => {
+      this.playerhistory.push(currentPlayedCard.name);
       console.log(this.playerhistory);
     };
 

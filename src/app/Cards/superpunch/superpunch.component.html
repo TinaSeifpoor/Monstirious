@@ -1,4 +1,5 @@
 <p>
-  <button [disabled]="!haveEnoughMana"
-  (click)="onClick()">Super Punch ({{manaCost}})</button>
-</p>
+    <button [disabled]="!haveEnoughMana"
+    (click)="onClick()">{{myCard.name}} ({{myCard.manaCost}})</button>
+  </p>
+  
