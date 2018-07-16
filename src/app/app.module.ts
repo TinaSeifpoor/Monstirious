@@ -1,20 +1,16 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
 
-import { AppComponent } from './app.component';
-import { ScreenComponent } from './screen/screen.component';
-import { NavComponent } from './nav/nav.component';
-import { HPComponent } from './hp/hp.component';
-import { MNComponent } from './mn/mn.component';
+import { AppComponent } from "./app.component";
+import { ScreenComponent } from "./screen/screen.component";
+import { NavComponent } from "./nav/nav.component";
+import { HPComponent } from "./hp/hp.component";
+import { MNComponent } from "./mn/mn.component";
 
-import { PlayerComponent } from './player/player.component';
-import { MonsterComponent } from './monster/monster.component';
-import { KickComponent } from './Cards/kick/kick.component';
-import { SuperpunchComponent } from './Cards/superpunch/superpunch.component';
-import { DikshuaComponent } from './Cards/dikshua/dikshua.component';
-import { RestoreHealthComponent } from './Cards/RestoreHealth/cardholder1.component';
-
-
+import { PlayerComponent } from "./player/player.component";
+import { MonsterComponent } from "./monster/monster.component";
+import { KickComponent } from "./Cards/cardholder2/cardholder2.component";
+import { StartingComponent } from './starting/starting.component';
 
 @NgModule({
   declarations: [
@@ -23,17 +19,13 @@ import { RestoreHealthComponent } from './Cards/RestoreHealth/cardholder1.compon
     NavComponent,
     HPComponent,
     MNComponent,
-    RestoreHealthComponent,
     PlayerComponent,
     MonsterComponent,
     KickComponent,
-    SuperpunchComponent,
-    DikshuaComponent
+    StartingComponent
   ],
-  imports: [
-    BrowserModule
-  ],
+  imports: [BrowserModule],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

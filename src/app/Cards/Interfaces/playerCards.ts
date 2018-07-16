@@ -66,6 +66,22 @@ export const RestoreHealth: Card = {
     type: CardType.SingleTargetDamage
   };
   
+  export const MonsterHit: Card = {
+    name: "MonsterHit",
+    manaCost: 30,
+    playCard(
+      changePlayerManaFunction,
+      changePlayerHealthFunction,
+      changeMonsterManaFunction,
+      changeMonsterHealthFunction
+    ) {
+      changePlayerHealthFunction(-10);
+      changeMonsterManaFunction(-30);
+    },
+    damage: 10,
+    type: CardType.SingleTargetDamage
+  };
+
 export function getRandomCard() : Card {
   const randomValue = Math.random();
   if (randomValue < 0.3) {

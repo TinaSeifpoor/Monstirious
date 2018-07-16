@@ -1,8 +1,8 @@
 <div class="navClass">
    <app-hp class="hpClass"></app-hp>
-   <card-1 class="ab1Class"></card-1>
-   <card-kick class="ab2Class"></card-kick>
-   <card-superpunch class="ab2Class"></card-superpunch>
-   <card-dikshua class="ab2Class"></card-dikshua>
+   <cardholder class="ab1Class" [card]="cardPrimary" (onplay)="onplayedPrimary($event)"></cardholder>
+   <cardholder class="ab2Class" [card]="card2" (onplay)="onplayed2()"></cardholder>
+   <cardholder class="ab2Class" [card]="card3" (onplay)="onplayed3()"></cardholder>
+   <cardholder class="ab2Class" [card]="card4" (onplay)="onplayed4()"></cardholder>
    <app-mn class="mnClass"></app-mn>
 </div>

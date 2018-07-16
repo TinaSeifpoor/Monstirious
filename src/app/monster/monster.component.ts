@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { MonsterService } from "../monster.service";
+import { PlayerService } from "../player.service";
+import { MonsteraiService } from "../monsterai.service";
 
 @Component({
   selector: "app-monster",
@@ -11,15 +13,19 @@ export class MonsterComponent implements OnInit {
   public monstermn: number;
   public monsterhp: number;
 
-  constructor(private MonsterService: MonsterService) {}
+  constructor(
+    private PlayerService: PlayerService,
+    private MonsterService: MonsterService,
+    private MonsterAIService: MonsteraiService,
+  ) {}
 
   public ngOnInit(): void {
+
     const myFunctionOnCallback = (currentPlayedCard: string) => {
       this.monsterhistory.push(currentPlayedCard);
-      console.log(this.monsterhistory);
+            console.log(this.monsterhistory);
     };
     this.MonsterService.monsterhistory$.subscribe(myFunctionOnCallback);
-
 
     const myFunctionOnCallback2 = (currentHealthValue: number) => {
       this.monsterhp = currentHealthValue;
@@ -29,7 +35,6 @@ export class MonsterComponent implements OnInit {
     const myFunctionOnCallback3 = (currentHealthValue: number) => {
       this.monstermn = currentHealthValue;
     };
-
     this.MonsterService.monstermana$.subscribe(myFunctionOnCallback3);
   }
 }

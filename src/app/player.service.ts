@@ -35,11 +35,28 @@ export class PlayerService {
     Card
   > = this.playercardSource.asObservable();
 
+  // public changeHealth(changeAmount: number): number {
+  //   const nextHealthAmount = this.healthSource.getValue() + changeAmount;
+  //   this.healthSource.next(nextHealthAmount);
+  //   return nextHealthAmount;
+  // }
+
   public changeHealth(changeAmount: number): number {
-    const nextHealthAmount = this.healthSource.getValue() + changeAmount;
+    let nextHealthAmount;
+    if (this.healthSource.getValue() > 0) {
+      nextHealthAmount = this.healthSource.getValue() + changeAmount;
+      if (nextHealthAmount > 100) {
+        nextHealthAmount = 100;
+      } else if (nextHealthAmount < 1) {
+        nextHealthAmount = 0;
+      }
+    }
+    else {
+      nextHealthAmount = 0;
+    }
     this.healthSource.next(nextHealthAmount);
     return nextHealthAmount;
-  }
+}
 
   private manaSource: BehaviorSubject<number> = new BehaviorSubject<number>(50);
   public mana$: Observable<number> = this.manaSource.asObservable();
@@ -57,7 +74,7 @@ export class PlayerService {
 
   constructor() {
     setInterval(() => {
-      if (this.manaSource.getValue() < 100) {
+      if (this.manaSource.getValue() < 100 && this.healthSource.getValue() > 0) {
         this.changeMana(+5);
       }
     }, 500);

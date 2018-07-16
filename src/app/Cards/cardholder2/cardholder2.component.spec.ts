@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { KickComponent } from './kick.component';
+import { KickComponent } from './cardholder2.component';
 
 describe('KickComponent', () => {
   let component: KickComponent;

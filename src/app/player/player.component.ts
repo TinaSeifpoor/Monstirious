@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PlayerService, Card } from '../player.service';
+import { MonsterService } from '../monster.service';
 
 @Component({
   selector: 'app-player',
@@ -8,7 +9,8 @@ import { PlayerService, Card } from '../player.service';
 })
 export class PlayerComponent implements OnInit {
   public playerhistory: string[] = []; // Sets the number on the component
-  constructor(private PlayerService: PlayerService) {}
+  constructor(private PlayerService: PlayerService,
+  private MonsterService: MonsterService) {}
 
   public ngOnInit(): void {
     const myFunctionOnCallback = (currentPlayedCard: Card) => {
