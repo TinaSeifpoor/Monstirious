@@ -1,23 +1,35 @@
 import { Injectable } from "@angular/core";
 import { BehaviorSubject, Observable, ReplaySubject } from "rxjs";
 import { StartsettingsService } from "./startsettings.service";
+import { Router, ActivatedRoute } from "../../node_modules/@angular/router";
 
 @Injectable({
   providedIn: "root"
 })
 export class MonsterService {
-  constructor(private startSettingService: StartsettingsService ) {
+  constructor(private startSettingService: StartsettingsService, private route: ActivatedRoute,
+    private router: Router,) {
+    //////
     setInterval(() => {
-      if (this.monstermanaSource.getValue() < 100 && this.monsterhealthSource.getValue() > 0) {
+      if (
+        this.monstermanaSource.getValue() < 100 &&
+        this.monsterhealthSource.getValue() > 0
+      ) {
         this.changeMonsterMana(+5);
       }
     }, 500);
-    const initiateMonsterHealth = (intialValue:number)=>{
-      this.monsterhealthSource.next(intialValue);
-         }
-    this.startSettingService.startMonsterHealth$.subscribe(initiateMonsterHealth);
+    const initiateMonsterHealthfunction = (initialValue: number) => {
+      let MonsterInitialHealthValue = initialValue;
+      this.initialMonsterHealthValue = initialValue;
+      this.monsterhealthSource.next(initialValue);
+      return MonsterInitialHealthValue;
+    };
+    this.startSettingService.startMonsterHealth$.subscribe(
+      initiateMonsterHealthfunction
+    );
   }
 
+  public initialMonsterHealthValue: number = this.startSettingService.startMonsterHealth.getValue();
   private monsterhealthSource: BehaviorSubject<number> = new BehaviorSubject<
     number
   >(100);
@@ -40,25 +52,20 @@ export class MonsterService {
     string
   > = this.monstercardSource.asObservable();
 
-
-
-  // const myFunctionOnCallback2 = (currentHealthValue: number) => {
-  //   this.monsterhp = currentHealthValue;
-  // };
-  // this.MonsterService.monsterhealth$.subscribe(myFunctionOnCallback2);
-
   public changeMonsterHealth(changeAmount: number): number {
     let nextMonsterHealthAmount;
     if (this.monsterhealthSource.getValue() > 0) {
       nextMonsterHealthAmount =
         this.monsterhealthSource.getValue() + changeAmount;
-      if (nextMonsterHealthAmount > 100) {
-        nextMonsterHealthAmount = 100;
+      if (nextMonsterHealthAmount > this.initialMonsterHealthValue) {
+        nextMonsterHealthAmount = this.initialMonsterHealthValue;
       } else if (nextMonsterHealthAmount < 1) {
         nextMonsterHealthAmount = 0;
+        this.router.navigate(['/won']);
       }
     } else {
       nextMonsterHealthAmount = 0;
+      this.router.navigate(['/won']);
     }
 
     this.monsterhealthSource.next(nextMonsterHealthAmount);

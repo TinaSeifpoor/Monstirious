@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { BehaviorSubject, Observable, ReplaySubject } from "rxjs";
+import { Router, ActivatedRoute } from "../../node_modules/@angular/router";
 
 export enum CardType {
   SingleTargetDamage,
@@ -49,10 +50,12 @@ export class PlayerService {
         nextHealthAmount = 100;
       } else if (nextHealthAmount < 1) {
         nextHealthAmount = 0;
+        this.router.navigate(['/gameover']); 
       }
     }
     else {
       nextHealthAmount = 0;
+      this.router.navigate(['/gameover']);
     }
     this.healthSource.next(nextHealthAmount);
     return nextHealthAmount;
@@ -72,7 +75,8 @@ export class PlayerService {
     return newCard;
   }
 
-  constructor() {
+  constructor(private route: ActivatedRoute,
+    private router: Router,) {
     setInterval(() => {
       if (this.manaSource.getValue() < 100 && this.healthSource.getValue() > 0) {
         this.changeMana(+5);

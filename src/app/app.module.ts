@@ -10,7 +10,20 @@ import { MNComponent } from "./mn/mn.component";
 import { PlayerComponent } from "./player/player.component";
 import { MonsterComponent } from "./monster/monster.component";
 import { KickComponent } from "./Cards/cardholder2/cardholder2.component";
-import { StartingComponent } from './starting/starting.component';
+import { StartingComponent } from "./starting/starting.component";
+import { GameScreenComponent } from "./game-screen/game-screen.component";
+
+import { Routes, RouterModule } from "@angular/router";
+import { WonComponent } from './won/won.component';
+import { GameoverComponent } from './gameover/gameover.component';
+
+const routes: Routes = [
+  { path: "", redirectTo: "/startscreen", pathMatch: "full" },
+  { path: "startscreen", component: StartingComponent },
+  { path: "game", component: GameScreenComponent },
+  { path: "won", component: WonComponent },
+  { path: "gameover", component: GameoverComponent }
+];
 
 @NgModule({
   declarations: [
@@ -22,9 +35,12 @@ import { StartingComponent } from './starting/starting.component';
     PlayerComponent,
     MonsterComponent,
     KickComponent,
-    StartingComponent
+    StartingComponent,
+    GameScreenComponent,
+    WonComponent,
+    GameoverComponent
   ],
-  imports: [BrowserModule],
+  imports: [BrowserModule, RouterModule.forRoot(routes)],
   providers: [],
   bootstrap: [AppComponent]
 })

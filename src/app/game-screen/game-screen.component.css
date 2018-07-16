@@ -1,0 +1,14 @@
+.navClass {
+    flex-grow: 0;
+}
+
+.screenClass {
+    flex-grow: 1;
+}
+
+:host {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+  }
+  

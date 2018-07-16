@@ -6,9 +6,9 @@ import { BehaviorSubject, Observable } from "rxjs";
 export class StartsettingsService {
   constructor() {}
 
-  private startMonsterHealth: BehaviorSubject<number> = new BehaviorSubject<
+  public startMonsterHealth: BehaviorSubject<number> = new BehaviorSubject<
     number
-  >(50);
+  >(100);
   public startMonsterHealth$: Observable<
     number
   > = this.startMonsterHealth.asObservable();
