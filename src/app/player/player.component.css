@@ -1,0 +1,9 @@
+.heroImageClass {
+    width: auto;
+    height: 50%;
+    position: absolute;
+    left: 38%;
+    bottom: 1%;
+    transform: translate(-50%, 0%);
+}
+

@@ -1,0 +1,13 @@
+.myButton {
+  background: url("/assets/images/card.png") no-repeat;
+  background-size: 100% 100%;
+  cursor: pointer;
+  border: none;
+  width: 100px;
+  height: 100px;
+}
+
+.myButton:active {
+  background: url("/assets/images/card.png") no-repeat;
+  background-size: 100% 100%;
+}
