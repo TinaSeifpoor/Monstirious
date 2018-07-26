@@ -1,11 +1,12 @@
 .healthbarImageClass {
     width: auto;
     height: 10%;
-    position: absolute;
     left: 10%;
     bottom: 1%;
     transform: translate(-50%, 0%);
+    position: absolute;
 }
+
 
 /* .container {
     position: relative;

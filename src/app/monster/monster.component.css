@@ -1,0 +1,8 @@
+.monsterImageClass {
+    width: auto;
+    height: 30%;
+    position: absolute;
+    right: 0%;
+    bottom: 15%;
+    transform: translate(-50%, 0%);
+}
