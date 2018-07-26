@@ -7,4 +7,6 @@
     /* transform: translate(-50%, 0%); */
 }
 
-
+.blueBar .ui-progressbar .ui-progressbar-value {
+    background: rgb(4, 0, 255);
+}

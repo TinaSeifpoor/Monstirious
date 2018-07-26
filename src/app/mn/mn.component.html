@@ -1,6 +1,13 @@
-<p>
-  {{mn}}
-</p>
+
 <!-- <img src="/assets/images/manabar.svg"  alt='Mana bar' class='manabarImageClass'> -->
-<!-- <p-progressBar class="customProgress" [value]="mn" ></p-progressBar> -->
-<mat-progress-bar mode="determinate" value="{{mn}}"> </mat-progress-bar>
+<div class="ui-rtl" dir="rtl">
+    <p>
+        {{mn}}
+      </p>
+  <p-progressBar  [value]="mn" class="blueBar" > </p-progressBar>
+</div>
+
+<!-- <mat-progress-bar mode="determinate" value="{{mn}}"> </mat-progress-bar> -->
+<!-- 
+<ng-progress  
+></ng-progress> -->

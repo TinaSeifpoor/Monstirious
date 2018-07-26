@@ -2,7 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { PlayerService } from "../player.service";
 import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
 import {MenuItem} from 'primeng/api';     
-import {MatProgressBarModule} from '@angular/material/progress-bar';
+// import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { NgProgress } from '@ngx-progressbar/core';
             //api
 
 @Component({
@@ -12,7 +13,7 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 })
 export class MNComponent implements OnInit {
   public mn: number; // Sets the number on the component
-  constructor(private PlayerService: PlayerService) {}
+  constructor(private PlayerService: PlayerService, public progress: NgProgress) {}
 
   public ngOnInit(): void {
     const myFunctionOnCallback = (currentHealthValue: number) => {
@@ -20,7 +21,13 @@ export class MNComponent implements OnInit {
     };
 
     this.PlayerService.mana$.subscribe(myFunctionOnCallback);
+    // this.progress.start();
 
+  //   setTimeout(() => {
+  //       /** progress ends after 2 seconds */
+  //       this.progress.done();
+  //   }, 2000);
+  // }
     // setInterval(() => {
 
     // if (this.mn<100){

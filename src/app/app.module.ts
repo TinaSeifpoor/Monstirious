@@ -20,6 +20,8 @@ import { GameoverComponent } from './gameover/gameover.component';
 import {ProgressBarModule} from 'primeng/progressbar';
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { NgProgressModule } from '@ngx-progressbar/core';
+
 
 
 const routes: Routes = [
@@ -46,7 +48,7 @@ const routes: Routes = [
     GameoverComponent,
     ],
 
-  imports: [BrowserModule, RouterModule.forRoot(routes), ProgressBarModule, MatButtonModule, MatCheckboxModule, MatProgressBarModule],
+  imports: [BrowserModule, RouterModule.forRoot(routes), ProgressBarModule, MatButtonModule, MatCheckboxModule, MatProgressBarModule, NgProgressModule.forRoot()],
   exports: [MatButtonModule, MatCheckboxModule],
   providers: [],
   bootstrap: [AppComponent]

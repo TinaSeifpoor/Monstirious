@@ -75,7 +75,7 @@ export const RestoreHealth: Card = {
       changeMonsterManaFunction,
       changeMonsterHealthFunction
     ) {
-      changePlayerHealthFunction(0);
+      changePlayerHealthFunction(-15);
       changeMonsterManaFunction(-30);
     },
     damage: 10,
