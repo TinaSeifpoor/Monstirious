@@ -1,5 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { PlayerService } from "../player.service";
+import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
+import {MenuItem} from 'primeng/api';     
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+            //api
 
 @Component({
   selector: "app-mn",

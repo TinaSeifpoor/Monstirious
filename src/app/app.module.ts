@@ -17,6 +17,11 @@ import { Routes, RouterModule } from "@angular/router";
 import { WonComponent } from './won/won.component';
 import { GameoverComponent } from './gameover/gameover.component';
 
+import {ProgressBarModule} from 'primeng/progressbar';
+import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+
+
 const routes: Routes = [
   { path: "", redirectTo: "/startscreen", pathMatch: "full" },
   { path: "startscreen", component: StartingComponent },
@@ -38,9 +43,11 @@ const routes: Routes = [
     StartingComponent,
     GameScreenComponent,
     WonComponent,
-    GameoverComponent
-  ],
-  imports: [BrowserModule, RouterModule.forRoot(routes)],
+    GameoverComponent,
+    ],
+
+  imports: [BrowserModule, RouterModule.forRoot(routes), ProgressBarModule, MatButtonModule, MatCheckboxModule, MatProgressBarModule],
+  exports: [MatButtonModule, MatCheckboxModule],
   providers: [],
   bootstrap: [AppComponent]
 })

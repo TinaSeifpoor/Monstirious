@@ -13,7 +13,7 @@ const girlhero20svgpath = "/assets/images/girlherounder30.svg";
 export class PlayerComponent implements OnInit {
   public playerhistory: string[] = []; // Sets the number on the component
   public pathUrl: string;
-  constructor(
+    constructor(
     private PlayerService: PlayerService,
     private MonsterService: MonsterService
   ) {}
@@ -25,11 +25,11 @@ export class PlayerComponent implements OnInit {
     };
 
     const setPathFunction = playerHealthVariable => {
-      if (playerHealthVariable > 20) {
+      if (playerHealthVariable > 30) {
         if (this.pathUrl !== girlherosvgpath) {
           this.pathUrl = girlherosvgpath;
         }
-      } else if (playerHealthVariable <= 20) {
+      } else if (playerHealthVariable <= 30) {
         if (this.pathUrl !== girlhero20svgpath) {
           this.pathUrl = girlhero20svgpath;
         }
@@ -41,4 +41,6 @@ export class PlayerComponent implements OnInit {
     //   this.PlayerService.changeHealth(-5);
     // }, 300);
   }
+
+  
 }

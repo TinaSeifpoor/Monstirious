@@ -14,6 +14,7 @@ export class KickComponent implements OnInit {
   public haveEnoughMana = false;
   public haveEnoughHealth = false;
   public clickAvailable = false;
+ 
   private numberOfPlays = 0;
   @Input() public card: Card;
   @Output() public onplay = new EventEmitter<number>();

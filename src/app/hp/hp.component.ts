@@ -13,6 +13,7 @@ export class HPComponent implements OnInit {
   public ngOnInit(): void {
     const myFunctionOnCallback = (currentHealthValue: number) => {
       this.hp = currentHealthValue;
+
     };
 
     this.PlayerService.health$.subscribe(myFunctionOnCallback);
