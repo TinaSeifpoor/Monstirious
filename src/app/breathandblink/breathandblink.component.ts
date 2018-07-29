@@ -216,6 +216,11 @@ export class BreathandblinkComponent implements OnInit {
       CharacterState.Attacking,
       [
         "/assets/images/" +
+        this.characterName +
+        "/swordplay/" +
+        BodyParts.swordArm +
+        "1.svg",
+        "/assets/images/" +
           this.characterName +
           "/swordplay/" +
           BodyParts.swordArm +
@@ -229,13 +234,20 @@ export class BreathandblinkComponent implements OnInit {
           this.characterName +
           "/swordplay/" +
           BodyParts.swordArm +
-          "3.svg"
+          "3.svg",
+          "/assets/images/" +
+            this.characterName +
+            "/swordplay/" +
+            BodyParts.swordArm +
+            "3.svg"
       ]
     );
     const faceAttackPromise = loadAnimationImages(
       BodyParts.head,
       CharacterState.Attacking,
       [
+        "/assets/images/" + this.characterName + "/swordplay/attackface.svg",
+        "/assets/images/" + this.characterName + "/swordplay/attackface.svg",
         "/assets/images/" + this.characterName + "/swordplay/attackface.svg",
         "/assets/images/" + this.characterName + "/swordplay/attackface.svg",
         "/assets/images/" + this.characterName + "/swordplay/attackface.svg"
