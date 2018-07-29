@@ -43,7 +43,7 @@
      inkscape:cx="253.86815"
      inkscape:cy="207.37682"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer4"
+     inkscape:current-layer="layer6"
      showgrid="false"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
@@ -207,10 +207,9 @@
      inkscape:groupmode="layer"
      id="layer6"
      inkscape:label="lhandMove1"
-     style="display:inline"
-     sodipodi:insensitive="true">
+     style="display:inline">
     <g
-       transform="rotate(-39.766026,88.517494,96.963005)"
+       transform="rotate(-22.573272,87.054654,114.84759)"
        style="display:inline"
        id="g1063-7">
       <g
@@ -445,7 +444,7 @@
      sodipodi:insensitive="true">
     <path
        style="display:inline;opacity:1;fill:#ffccaa;fill-opacity:1;stroke:#000000;stroke-width:4.5;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:fill markers stroke"
-       d="m 109.06268,56.69924 c 0,10.36156 1.90765,18.65949 -6.13288,25.44974 C 94.889258,88.93922 79.757488,90.82 67.488059,90.82 55.218626,90.82 43.456859,86.57555 35.366032,79.38392 27.275204,72.1923 26.678,63.7544 26.678,53.392831 c 0,-20.723134 19.087906,-36.452211 43.626774,-36.45221 24.538864,-1e-6 38.757906,19.035481 38.757906,39.758619 z"
+       d="m 108.22496,61.10124 c 0,10.36156 1.90765,18.65949 -6.13288,25.44974 -8.040537,6.79024 -23.172307,8.67102 -35.441736,8.67102 -12.269433,0 -24.0312,-4.24445 -32.122027,-11.43608 -8.090828,-7.19162 -8.688032,-15.62952 -8.688032,-25.991089 0,-20.723134 19.087906,-36.452211 43.626774,-36.45221 24.538864,-1e-6 38.757901,19.035481 38.757901,39.758619 z"
        id="path937-6"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="sssssss" />
@@ -470,7 +469,7 @@
      sodipodi:insensitive="true">
     <path
        style="opacity:1;fill:#ffccaa;fill-opacity:1;stroke:#000000;stroke-width:4.5;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:fill markers stroke"
-       d="m 109.06266,56.699234 c 0,10.361567 1.90766,18.659495 -6.13288,25.449742 C 94.889255,88.939222 79.757491,90.820001 67.488058,90.82 55.218626,90.819999 43.456859,86.575547 35.366032,79.383922 27.275204,72.192298 26.678,63.754395 26.678,53.392828 c 0,-20.723133 19.087906,-36.45221 43.626772,-36.452209 24.538868,-1e-6 38.757888,19.035481 38.757888,39.758615 z"
+       d="m 108.23684,61.100063 c 0,10.361567 1.90765,18.659495 -6.13288,25.449742 -8.04053,6.790246 -23.172294,8.671025 -35.441727,8.671024 -12.269432,-10e-7 -24.031199,-4.244453 -32.122026,-11.436078 -8.090828,-7.191624 -8.688032,-15.629527 -8.688032,-25.991094 0,-20.723133 19.087906,-36.45221 43.626772,-36.452209 24.538868,-1e-6 38.757893,19.035481 38.757893,39.758615 z"
        id="path937"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="sssssss" />
