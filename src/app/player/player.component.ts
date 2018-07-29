@@ -1,8 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { PlayerService, Card } from "../player.service";
 import { MonsterService } from "../monster.service";
+import { CharacterState } from "../breathandblink/breathandblink.component";
 
-const girlherosvgpath = "/assets/images/girlhero.svg";
+const girlherosvgpath = "/assets/images/HeroGirlNumber1/hg1Full.svg";
 const girlhero20svgpath = "/assets/images/girlherounder30.svg";
 
 @Component({
@@ -13,7 +14,9 @@ const girlhero20svgpath = "/assets/images/girlherounder30.svg";
 export class PlayerComponent implements OnInit {
   public playerhistory: string[] = []; // Sets the number on the component
   public pathUrl: string;
-    constructor(
+  public characterName: string = "HeroGirlNumber1";
+  public characterState = CharacterState.Idle;
+  constructor(
     private PlayerService: PlayerService,
     private MonsterService: MonsterService
   ) {}
@@ -21,6 +24,12 @@ export class PlayerComponent implements OnInit {
   public ngOnInit(): void {
     const myFunctionOnCallback = (currentPlayedCard: Card) => {
       this.playerhistory.push(currentPlayedCard.name);
+      this.characterState = CharacterState.Attacking;
+      // Start animation
+      // Finished animation
+      setTimeout(() => {
+        this.characterState = CharacterState.Idle;
+      }, 1000);
       console.log(this.playerhistory);
     };
 
@@ -41,6 +50,4 @@ export class PlayerComponent implements OnInit {
     //   this.PlayerService.changeHealth(-5);
     // }, 300);
   }
-
-  
 }

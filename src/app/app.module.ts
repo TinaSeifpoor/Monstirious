@@ -21,6 +21,7 @@ import {ProgressBarModule} from 'primeng/progressbar';
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { NgProgressModule } from '@ngx-progressbar/core';
+import { BreathandblinkComponent } from './breathandblink/breathandblink.component';
 
 
 
@@ -46,6 +47,7 @@ const routes: Routes = [
     GameScreenComponent,
     WonComponent,
     GameoverComponent,
+    BreathandblinkComponent,
     ],
 
   imports: [BrowserModule, RouterModule.forRoot(routes), ProgressBarModule, MatButtonModule, MatCheckboxModule, MatProgressBarModule, NgProgressModule.forRoot()],
