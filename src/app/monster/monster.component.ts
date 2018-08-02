@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { MonsterService } from "../monster.service";
 import { PlayerService } from "../player.service";
 import { MonsteraiService } from "../monsterai.service";
+import { CharacterState } from "../breathandblink/breathandblink.component";
 
 const monsterpath = "/assets/images/Monster1.svg";
 const monsterunder30path = "/assets/images/Monster1under30.svg";
@@ -16,6 +17,8 @@ export class MonsterComponent implements OnInit {
   public monstermn: number;
   public monsterhp: number;
   public pathUrl2: string;
+  public characterName: string = "MonsterYeti";
+  public characterState = CharacterState.Idle;
 
   constructor(
     private PlayerService: PlayerService,
@@ -27,6 +30,11 @@ export class MonsterComponent implements OnInit {
 
     const myFunctionOnCallback = (currentPlayedCard: string) => {
       this.monsterhistory.push(currentPlayedCard);
+      this.characterState = CharacterState.Attacking;
+      setTimeout(() => {
+        this.characterState = CharacterState.Idle;
+      }, 1000);
+      
             console.log(this.monsterhistory);
     };
     this.MonsterService.monsterhistory$.subscribe(myFunctionOnCallback);

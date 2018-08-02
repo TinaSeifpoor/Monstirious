@@ -9,12 +9,14 @@ enum BodyParts {
   rightArm = "rightArm",
   head = "head",
   hair = "hair",
-  swordArm = "swordArm"
+  swordArm = "swordArm",
+  heart = "heart",
 }
 
 export enum CharacterState {
   Idle,
-  Attacking
+  Attacking,
+  Healing
 }
 
 @Component({
@@ -32,6 +34,7 @@ export class BreathandblinkComponent implements OnInit {
     CharacterState,
     Map<BodyParts, HTMLImageElement[]>
   >();
+  // private healingImages = new Map<healingHearts, HTMLImageElement[]>;
   private context: CanvasRenderingContext2D;
   private breathDir = 1;
   private breathAmt = 0;
@@ -40,6 +43,7 @@ export class BreathandblinkComponent implements OnInit {
   constructor() {
     this.animationProgress.set(CharacterState.Idle, 0);
     this.animationProgress.set(CharacterState.Attacking, 0);
+    this.animationProgress.set(CharacterState.Healing, 0);
   }
 
   private beforeRedraw() {
@@ -73,7 +77,7 @@ export class BreathandblinkComponent implements OnInit {
     const animationCurrent = this.animationImages.get(this.characterState);
     // Animation set for current state
     if (animationCurrent != null) {
-      const animForPart = animationCurrent[part];
+      const animForPart = animationCurrent.get(part);
       if (animForPart != null) {
         const idx = Math.round(this.animationProgress[this.characterState]);
         if (idx < animForPart.length) {
@@ -216,10 +220,10 @@ export class BreathandblinkComponent implements OnInit {
       CharacterState.Attacking,
       [
         "/assets/images/" +
-        this.characterName +
-        "/swordplay/" +
-        BodyParts.swordArm +
-        "1.svg",
+          this.characterName +
+          "/swordplay/" +
+          BodyParts.swordArm +
+          "1.svg",
         "/assets/images/" +
           this.characterName +
           "/swordplay/" +
@@ -235,11 +239,11 @@ export class BreathandblinkComponent implements OnInit {
           "/swordplay/" +
           BodyParts.swordArm +
           "3.svg",
-          "/assets/images/" +
-            this.characterName +
-            "/swordplay/" +
-            BodyParts.swordArm +
-            "3.svg"
+        "/assets/images/" +
+          this.characterName +
+          "/swordplay/" +
+          BodyParts.swordArm +
+          "3.svg"
       ]
     );
     const faceAttackPromise = loadAnimationImages(
@@ -254,6 +258,18 @@ export class BreathandblinkComponent implements OnInit {
       ]
     );
 
+    // const heartPromise = loadAnimationImages(
+    //   BodyParts.heart, CharacterState.Healing,
+    //   [
+    //     "/assets/images/HeartsHealing/heart1.svg",
+    //     "/assets/images/HeartsHealing/heart2.svg",
+    //     "/assets/images/HeartsHealing/heart3.svg",
+    //     "/assets/images/HeartsHealing/heart4.svg",
+    //     "/assets/images/HeartsHealing/heart5.svg",
+    //     "/assets/images/HeartsHealing/heart6.svg"
+    //   ]
+    // );
+
     try {
       await leftArmPromise;
       await rightLegPromise;
@@ -265,6 +281,7 @@ export class BreathandblinkComponent implements OnInit {
       await swordArmPromise;
       await swordplayPromise;
       await faceAttackPromise;
+      // await heartPromise;
       window.setInterval(() => this.everyInterval(), 1000 / this.fps);
     } catch (err) {
       console.error(err);
