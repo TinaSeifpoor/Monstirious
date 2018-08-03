@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { PlayerService, Card } from "../player.service";
+import { PlayerService, Card, CardType } from "../player.service";
 import { MonsterService } from "../monster.service";
 import { CharacterState } from "../breathandblink/breathandblink.component";
 
@@ -24,7 +24,14 @@ export class PlayerComponent implements OnInit {
   public ngOnInit(): void {
     const myFunctionOnCallback = (currentPlayedCard: Card) => {
       this.playerhistory.push(currentPlayedCard.name);
-      this.characterState = CharacterState.Attacking;
+      if (
+        currentPlayedCard.type == CardType.SingleTargetDamage ||
+        currentPlayedCard.type == CardType.AreaDamage
+      ) {
+        this.characterState = CharacterState.Attacking;
+      } else if (currentPlayedCard.type == CardType.SelfHealing) {
+        this.characterState = CharacterState.Healing;
+      }
       // Start animation
       // Finished animation
       setTimeout(() => {

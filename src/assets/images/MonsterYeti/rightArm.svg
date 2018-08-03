@@ -17,7 +17,7 @@
    version="1.1"
    id="svg8"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
-   sodipodi:docname="leftArm.svg"
+   sodipodi:docname="rightArm.svg"
    enable-background="new">
   <defs
      id="defs2">
@@ -110,7 +110,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -393,7 +393,7 @@
      id="layer6"
      inkscape:label="swordhand"
      sodipodi:insensitive="true"
-     style="display:inline">
+     style="display:none">
     <g
        id="g1368-3-9"
        transform="rotate(-6.7101635,23.31643,335.65737)" />
@@ -494,7 +494,7 @@
     <g
        style="display:inline"
        id="g1032-1"
-       transform="matrix(-1,0,0,1,233.64296,-4.4413813)">
+       transform="matrix(-1,0,0,1,235.90232,0.37693161)">
       <g
          id="g1039-3">
         <path

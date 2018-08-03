@@ -95,7 +95,7 @@
      inkscape:cx="463.61117"
      inkscape:cy="248.07539"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer5"
+     inkscape:current-layer="layer2"
      showgrid="false"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
@@ -393,7 +393,7 @@
      id="layer6"
      inkscape:label="swordhand"
      sodipodi:insensitive="true"
-     style="display:inline">
+     style="display:none">
     <g
        id="g1368-3-9"
        transform="rotate(-6.7101635,23.31643,335.65737)" />
@@ -482,8 +482,7 @@
      inkscape:groupmode="layer"
      id="layer5"
      inkscape:label="leftArm"
-     style="display:none"
-     sodipodi:insensitive="true">
+     style="display:none">
     <g
        style="display:inline"
        id="g878-5-7"
@@ -495,7 +494,7 @@
     <g
        style="display:inline"
        id="g1032-1"
-       transform="matrix(-1,0,0,1,233.64296,-4.4413813)">
+       transform="matrix(-1,0,0,1,235.90232,-0.68140173)">
       <g
          id="g1039-3">
         <path
