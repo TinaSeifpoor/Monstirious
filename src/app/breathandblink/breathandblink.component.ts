@@ -2,7 +2,6 @@ import { Component, OnInit, ElementRef, ViewChild, Input } from "@angular/core";
 import { resolve } from "url";
 
 enum CanvasLayer {
-  leftArm = "leftArm",
   rightLeg = "rightLeg",
   leftLeg = "leftLeg",
   torso = "torso",
@@ -204,7 +203,7 @@ export class BreathandblinkComponent implements OnInit {
       return Promise.all(promises);
     };
 
-    const leftArmPromise = loadIdleCanvasLayer(CanvasLayer.leftArm);
+    // const leftArmPromise = loadIdleCanvasLayer(CanvasLayer.leftArm);
     const rightLegPromise = loadIdleCanvasLayer(CanvasLayer.rightLeg);
     const leftLegPromise = loadIdleCanvasLayer(CanvasLayer.leftLeg);
     const torsoPromise = loadIdleCanvasLayer(CanvasLayer.torso);
@@ -276,7 +275,7 @@ export class BreathandblinkComponent implements OnInit {
     );
 
     try {
-      await leftArmPromise;
+      // await leftArmPromise;
       await rightLegPromise;
       await leftLegPromise;
       await torsoPromise;

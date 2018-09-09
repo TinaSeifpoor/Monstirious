@@ -13,6 +13,8 @@ export class StartingComponent implements OnInit {
   ngOnInit() {
   
   }
+  
+  
   public onEasyClick(): void {
     this.StartSettingService.setHealth(100);
     console.log('easy is called');
